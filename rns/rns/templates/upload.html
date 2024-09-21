@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload a file</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .upload-container {
+            text-align: center;
+        }
+
+        .upload-container input[type="file"] {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-container">
+        <h1>Upload a file</h1>
+        <form method="post" enctype="multipart/form-data" action="/upload/">
+            <input type="file" name="file">
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+</body>
+</html>

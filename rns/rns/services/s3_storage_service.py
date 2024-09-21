@@ -21,8 +21,7 @@ class S3Storage(StorageService):
         encrypted_file = self._encrypt_file(file)
 
         try:
-            with open(f'files/{encrypted_file.name}', 'wb') as f:
-                self.s3.put_object(Bucket=settings.AWS_S3_BUCKET_NAME, Key=file.name, Body=f.read())
+            self.s3.put_object(Bucket=settings.AWS_S3_BUCKET_NAME, Key=self.key, Body=encrypted_file.read())
         except Exception as e:
             # TODO: Be more specific with the exception
             raise Exception(f'Error uploading file: {e}')
