@@ -7,6 +7,9 @@ from django.shortcuts import render
 from rns.utils.get_storage_service import get_storage_service
 from rns.forms import UploadForm
 
+def index(request):
+    return render(request, 'index.html')
+
 @csrf_exempt
 def upload(request):
     if request.method == 'POST' and request.FILES['file']:

@@ -18,9 +18,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from rns.views import upload
+from rns.views import upload, index
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("", index),
     path("upload/", upload),
 ]
